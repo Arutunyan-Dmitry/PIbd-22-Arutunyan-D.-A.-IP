@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - JpaBookingTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>JpaBookingTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.ulstu.SushiBar.html">com.ulstu.SushiBar</a> &gt; JpaBookingTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">6</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.721s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testAddDishToOrder()</td>
+<td class="success">0.062s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testOrderCreate()</td>
+<td class="success">0.011s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testOrderRead()</td>
+<td class="success">0.052s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testOrderReadAll()</td>
+<td class="success">0.579s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testOrderReadAllEmpty()</td>
+<td class="success">0.007s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testOrderReadNotFound()</td>
+<td class="success">0.010s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>15:09:04.845 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+15:09:04.863 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+15:09:04.915 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.ulstu.SushiBar.JpaBookingTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+15:09:04.935 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.ulstu.SushiBar.JpaBookingTest], using SpringBootContextLoader
+15:09:04.942 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.ulstu.SushiBar.JpaBookingTest]: class path resource [com/ulstu/SushiBar/JpaBookingTest-context.xml] does not exist
+15:09:04.943 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.ulstu.SushiBar.JpaBookingTest]: class path resource [com/ulstu/SushiBar/JpaBookingTestContext.groovy] does not exist
+15:09:04.943 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.ulstu.SushiBar.JpaBookingTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+15:09:04.944 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.ulstu.SushiBar.JpaBookingTest]: JpaBookingTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:09:05.015 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.ulstu.SushiBar.JpaBookingTest]
+15:09:05.094 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [D:\Labs\2 InterProg\Lab3\SushiBar\build\classes\java\main\com\ulstu\SushiBar\SushiBarApplication.class]
+15:09:05.096 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.ulstu.SushiBar.SushiBarApplication for test class com.ulstu.SushiBar.JpaBookingTest
+15:09:05.236 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.ulstu.SushiBar.JpaBookingTest]: using defaults.
+15:09:05.237 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+15:09:05.262 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@267f474e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7a7471ce, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@28276e50, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@62e70ea3, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@3efe7086, org.springframework.test.context.support.DirtiesContextTestExecutionListener@675d8c96, org.springframework.test.context.transaction.TransactionalTestExecutionListener@741b3bc3, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2ed3b1f5, org.springframework.test.context.event.EventPublishingTestExecutionListener@63648ee9, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@68d6972f, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@45be7cd5, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7651218e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3185fa6b, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6d366c9b, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5b58ed3c]
+15:09:05.268 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@68759011 testClass = JpaBookingTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7e242b4d testClass = JpaBookingTest, locations = '{}', classes = '{class com.ulstu.SushiBar.SushiBarApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@68b32e3e, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@7ca20101, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@2ea6e30c, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@388526fb, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@4c51cf28, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@57af006c], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
+2022-04-27 15:09:05.741  INFO 23780 --- [    Test worker] com.ulstu.SushiBar.JpaBookingTest        : Starting JpaBookingTest using Java 17.0.2 on ArutyunyanWin64 with PID 23780 (started by retr0 in D:\Labs\2 InterProg\Lab3\SushiBar)
+2022-04-27 15:09:05.744  INFO 23780 --- [    Test worker] com.ulstu.SushiBar.JpaBookingTest        : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2022-04-27 15:09:06.630  INFO 23780 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-04-27 15:09:06.652  INFO 23780 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2022-04-27 15:09:07.490  INFO 23780 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-04-27 15:09:07.566  INFO 23780 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-04-27 15:09:07.808  INFO 23780 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-04-27 15:09:08.059  INFO 23780 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-27 15:09:08.339  INFO 23780 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-27 15:09:08.362  INFO 23780 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-04-27 15:09:09.358  INFO 23780 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-04-27 15:09:09.368  INFO 23780 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-04-27 15:09:09.768  WARN 23780 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-27 15:09:10.116  INFO 23780 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data'
+2022-04-27 15:09:10.572  INFO 23780 --- [    Test worker] com.ulstu.SushiBar.JpaBookingTest        : Started JpaBookingTest in 5.242 seconds (JVM running for 6.839)
+2022-04-27 15:09:11.158  INFO 23780 --- [    Test worker] com.ulstu.SushiBar.JpaIngredientTest     : [Booking{id=1, status='Принят'}, Booking{id=2, status='Принят'}]
+2022-04-27 15:09:11.188  INFO 23780 --- [    Test worker] com.ulstu.SushiBar.JpaIngredientTest     : Booking{id=3, status='Принят'}
+2022-04-27 15:09:11.222  INFO 23780 --- [    Test worker] com.ulstu.SushiBar.JpaIngredientTest     : Booking{id=3, status='Принят'}
+2022-04-27 15:09:11.243  INFO 23780 --- [    Test worker] com.ulstu.SushiBar.JpaIngredientTest     : Booking{id=4, status='Принят'}
+2022-04-27 15:09:11.305  INFO 23780 --- [    Test worker] com.ulstu.SushiBar.JpaIngredientTest     : Booking{id=6, status='Принят'}
+2022-04-27 15:09:11.328  INFO 23780 --- [    Test worker] com.ulstu.SushiBar.JpaIngredientTest     : []
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.4.1</a> at 27 апр. 2022 г., 15:09:11</p>
+</div>
+</div>
+</body>
+</html>
