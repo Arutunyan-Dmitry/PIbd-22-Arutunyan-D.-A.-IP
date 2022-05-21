@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default}"
+      xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+</head>
+<body>
+<div layout:fragment="content">
+    <div>
+        <a sec:authorize="hasRole('ROLE_STOREKEEPER') or hasRole('ROLE_ADMIN')" class="btn btn-success button-fixed"
+           th:href="@{/ingredient/edit/}">
+            <i class="fa-solid fa-plus"></i> Добавить
+        </a>
+        <a sec:authorize="hasRole('ROLE_CHEF') or hasRole('ROLE_ADMIN')" class="btn btn-primary button-fixed"
+           th:href="@{/ingredient/add/}">
+            <i class="fa-solid fa-plus"></i> Добавить блюда к ингредиентам
+        </a>
+        <a sec:authorize="hasRole('ROLE_CHEF') or hasRole('ROLE_ADMIN')" class="btn btn-danger button-fixed"
+           th:href="@{/ingredient/rem/}">
+            <i class="fa fa-trash"></i> Удалить блюда у ингредиентов
+        </a>
+    </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">Id</th>
+                <th scope="col">Название</th>
+                <th scope="col">Грамовка</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="ingredient, iterator: ${ingredients}">
+                <th scope="row" th:text="${iterator.index} + 1"/>
+                <td th:text="${ingredient.id}"/>
+                <td th:text="${ingredient.Name}" style="width: 60%"/>
+                <td th:text="${ingredient.Grm} + гр" style="width: 60%"/>
+                <td style="width: 10%">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a sec:authorize="hasRole('ROLE_STOREKEEPER') or hasRole('ROLE_ADMIN')" class="btn btn-warning button-fixed button-sm"
+                           th:href="@{/ingredient/edit/{id}(id=${ingredient.id})}">
+                            <i class="fa fa-pencil" aria-hidden="true"></i> Изменить
+                        </a>
+                        <button sec:authorize="hasRole('ROLE_STOREKEEPER') or hasRole('ROLE_ADMIN')" type="button" class="btn btn-danger button-fixed button-sm"
+                                th:attr="onclick=|confirm('Удалить запись?') && document.getElementById('remove-${ingredient.id}').click()|">
+                            <i class="fa fa-trash" aria-hidden="true"></i> Удалить
+                        </button>
+                    </div>
+                    <form th:action="@{/ingredient/delete/{id}(id=${ingredient.id})}" method="post">
+                        <button th:id="'remove-' + ${ingredient.id}" type="submit" style="display: none">
+                            Удалить
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

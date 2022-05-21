@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default}"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+</head>
+<body>
+<div layout:fragment="content">
+    <div th:text="${errors}" class="margin-bottom alert-danger"></div>
+    <form action="#" th:action="@{/ingredient/{id}(id=${id})}" th:object="${ingredientDto}" method="post">
+        <div class="mb-3">
+            <label for="Name" class="form-label">Название</label>
+            <input type="text" class="form-control" id="Name" th:field="${ingredientDto.Name}" required="true">
+            <label for="grm" class="form-label">Грамовка</label>
+            <input type="text" class="form-control" id="grm" th:field="${ingredientDto.Grm}" required="true">
+        </div>
+        <span th:if="${id != null}" style="margin-top: 1%;"> Используется в блюдах: </span>
+        <div th:if="${id != null}" class="table-responsive" style="margin-bottom: 1%;">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">№</th>
+                    <th scope="col">Id</th>
+                    <th scope="col">Название</th>
+                    <th scope="col">Цена</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="dish, iterator: ${ingredientDto.dishes}">
+                    <th scope="row" th:text="${iterator.index} + 1"/>
+                    <td th:text="${dish.id}"/>
+                    <td th:text="${dish.dishName}" style="width: 60%"/>
+                    <td th:text="${dish.price}" style="width: 60%"/>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary button-fixed">
+                <span th:if="${id == null}">Добавить</span>
+                <span th:if="${id != null}">Обновить</span>
+            </button>
+            <a class="btn btn-secondary button-fixed" th:href="@{/ingredient}">
+                Назад
+            </a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

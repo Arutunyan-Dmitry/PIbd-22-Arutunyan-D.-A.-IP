@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default}"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript" src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">Id</th>
+                <th scope="col">Название</th>
+                <th scope="col">Грамовка</th>
+            </tr>
+            </thead>
+            <tbody id="ingredients">
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+<th:block layout:fragment="scripts">
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "http://localhost:8080/api/ingredient/"
+            }).then(function (data) {
+                $.each(data, function (index, value) {
+                    const row = $("<tr>");
+                    const number = $("<th>")
+                        .attr("scope", "row")
+                        .text(index + 1);
+                    const id = $("<td>").text(value.id);
+                    const name = $("<td>").text(value.name);
+                    const grm = $("<td>").text(value.grm + "гр");
+                    row.append(number);
+                    row.append(id);
+                    row.append(name);
+                    row.append(grm);
+                    $("#ingredients").append(row);
+                });
+            });
+        });
+    </script>
+</th:block>
+</html>

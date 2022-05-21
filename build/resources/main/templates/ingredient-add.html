@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default}"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+</head>
+<body>
+<div layout:fragment="content">
+    <div th:text="${errors}" class="margin-bottom alert-danger"></div>
+    <form action="#" th:action="@{/ingredient/add}" th:object="${dishIngredientDto}" method="post">
+        <div class="mb-3">
+            <label class="form-label" style="margin-top: 1%">Ингредиент</label>
+            <select class="form-control" th:field="${dishIngredientDto.ingredientId}">
+                <option th:each="ingredient, iterator: ${ingredients}" th:value="${ingredient.id}" th:text="${ingredient.Name} + ' ' + ${ingredient.Grm} + гр" />
+            </select>
+            <label class="form-label">Блюдо</label>
+            <select class="form-control" th:field="${dishIngredientDto.dishId}">
+                <option th:each="dish, iterator: ${dishes}" th:value="${dish.id}" th:text="${dish.Name}" />
+            </select>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary button-fixed">Добавить</button>
+            <a class="btn btn-secondary button-fixed" th:href="@{/ingredient}">Назад</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

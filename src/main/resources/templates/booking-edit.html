@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default}"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+</head>
+<body>
+<div layout:fragment="content">
+    <div th:text="${errors}" class="margin-bottom alert-danger"></div>
+    <form action="#" th:action="@{/booking/{id}(id=${id})}" th:object="${bookingDto}" method="post">
+        <div class="mb-3">
+            <label for="StatusR" class="form-label">Статус заказа</label>
+            <input type="text" class="form-control" id="StatusR" th:field="${bookingDto.StatusR}" required="true">
+            <label th:if="${id == null}" for="StatusR" class="form-label">Блюдо</label>
+            <select th:if="${id == null}" id="dish" class="form-control" th:field="${bookingDto.dish}">
+                <option th:each="dish, iterator: ${dishes}" th:value="${dish.id}" th:text="${dish.Name}" />
+            </select>
+            <label th:if="${id == null}" for="amount" class="form-label">Кол-во блюд</label>
+            <input th:if="${id == null}" type="number" class="form-control" id="amount" th:field="${bookingDto.amount}" required="true">
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary button-fixed">
+                <span th:if="${id == null}">Добавить</span>
+                <span th:if="${id != null}">Обновить</span>
+            </button>
+            <a class="btn btn-secondary button-fixed" th:href="@{/booking}">
+                Назад
+            </a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
