@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default}"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript" src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<div layout:fragment="content">
+    <div>
+        <a class="btn btn-success button-fixed"
+           th:href="@{/booking/edit/}">
+            <i class="fa-solid fa-plus"></i> Добавить
+        </a>
+
+        <select id="select-status" class="form-control">
+            <option th:value="${'Принят'}">Принят</option>
+            <option th:value="${'Готовится'}">Готовится</option>
+            <option th:value="${'Готов'}">Готов</option>
+            <option th:value="${'Выдан'}">Выдан</option>
+        </select>
+        <a id="select-status-link" class="btn btn-primary button-fixed"
+           th:href="@{/booking/Готовится}">
+            <i class="fa-solid fa-plus"></i> Фильтровать
+        </a>
+    </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">Id</th>
+                <th scope="col">Статус заказа</th>
+                <th scope="col">Название блюда</th>
+                <th scope="col">К оплате</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="booking, iterator: ${bookings}">
+                <th scope="row" th:text="${iterator.index} + 1"/>
+                <td th:text="${booking.id}"/>
+                <td th:text="${booking.StatusR}" style="width: 40%"/>
+                <td th:text="${booking.dish.dishName} + ' x' + ${booking.amount}" style="width: 40%"/>
+                <td th:text="${booking.pavement}" style="width: 30%"/>
+                <td style="width: 10%">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a class="btn btn-warning button-fixed button-sm"
+                           th:href="@{/booking/edit/{id}(id=${booking.id})}">
+                            <i class="fa fa-pencil" aria-hidden="true"></i> Изменить
+                        </a>
+                        <button type="button" class="btn btn-danger button-fixed button-sm"
+                                th:attr="onclick=|confirm('Удалить запись?') && document.getElementById('remove-${booking.id}').click()|">
+                            <i class="fa fa-trash" aria-hidden="true"></i> Удалить
+                        </button>
+                    </div>
+                    <form th:action="@{/booking/delete/{id}(id=${booking.id})}" method="post">
+                        <button th:id="'remove-' + ${booking.id}" type="submit" style="display: none">
+                            Удалить
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<th:block layout:fragment="scripts">
+    <script>
+        document.getElementById('select-status').addEventListener('change', function() {
+             var searchstatus = this.value;
+             var link = document.getElementById('select-status-link')
+             link.setAttribute('href', "/booking/" + searchstatus);
+        });
+    </script>
+</th:block>
+</body>
+</html>
